@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Trazzy</title>
+    <meta name="description" content="Complete your purchase at Trazzy. Secure checkout with multiple payment options.">
+    <meta name="keywords" content="checkout, payment, Trazzy, Razorpay, cash on delivery">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html"><img src="logo.png" alt="Trazzy Logo"></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout">
+            <h1>Checkout</h1>
+            <div class="checkout-container">
+                <div class="checkout-form-section">
+                    <h2>Delivery Details</h2>
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="fullname">Full Name:</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <textarea id="address" name="address" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City:</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State:</label>
+                                <input type="text" id="state" name="state" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="postal">Postal Code:</label>
+                                <input type="text" id="postal" name="postal" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country:</label>
+                                <input type="text" id="country" name="country" value="India" required>
+                            </div>
+                        </div>
+
+                        <h2 style="margin-top: 2rem;">Payment Method</h2>
+                        
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method" value="razorpay" required>
+                                <span class="payment-label">
+                                    <i class="fas fa-credit-card"></i> Razorpay (Debit/Credit Card, UPI, Wallet)
+                                </span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method" value="cod" required>
+                                <span class="payment-label">
+                                    <i class="fas fa-money-bill-wave"></i> Cash on Delivery (COD)
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="cta-button" style="width: 100%; margin-top: 2rem;">Place Order</button>
+                    </form>
+                </div>
+
+                <div class="order-summary-section">
+                    <h2>Order Summary</h2>
+                    <div id="order-items">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </div>
+                    <div class="order-total">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span>₹<span id="subtotal">0.00</span></span>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipping:</span>
+                            <span>₹<span id="shipping">0.00</span></span>
+                        </div>
+                        <div class="total-row tax">
+                            <span>Tax (18%):</span>
+                            <span>₹<span id="tax">0.00</span></span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total Amount:</span>
+                            <span>₹<span id="grand-total">0.00</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Trazzy</h3>
+                <p>Wear your style with confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61579542984211" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/trazzy.in/?hl=en" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2026 Trazzy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
